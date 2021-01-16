@@ -1,10 +1,11 @@
-CREATE DATABASE weeklySpending;
+CREATE DATABASE weeklySpending
 
 CREATE TABLE Spending (
     BankAcc int,
-    Groceries varchar(255),
-    Clothing varchar(255),
-    Entertainment varchar(255),
-    Furniture varchar(255), 
-    Other varchar(255)
+    Groceries int(11),
+    Clothing int(11),
+    Entertainment int(11),
+    Furniture int(11), 
+    Other int(11)
 );
+
