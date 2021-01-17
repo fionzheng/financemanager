@@ -25,7 +25,7 @@ SECRET_KEY = 'y!$gr-y%d)t1z$-mx$pk6#nn=3*%ly!9jeju=6te^2*fav1)8u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://0.0.0.0:8080/']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'fdjango',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': 'neysap',
-        'PASSWORD': '7Turboo6*',
+        'USER': 'username',
+        'PASSWORD': 'password',
     }
 }
 
