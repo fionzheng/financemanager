@@ -1,6 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
+
 import "./App.css"
+
+import React, { Component } from "react";
+import { render } from "react-dom";
 
 import "./styles.css";
 import { CaButton } from "./components/cashbutton/cashbutton";
@@ -32,12 +34,40 @@ function clickDebit() {
 }
 
 function clickBudget() {
-  alert('Your Budget has been updated !');
+  alert('Your Budget has been updated!');
 }
 
-function App() {
-  return (
-    
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      loaded: false,
+      placeholder: "Loading"
+    };
+  }
+
+  componentDidMount() {
+    fetch("api/lead")
+      .then(response => {
+        if (response.status > 400) {
+          return this.setState(() => {
+            return { placeholder: "Something went wrong!" };
+          });
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.setState(() => {
+          return {
+            data,
+            loaded: true
+          };
+        });
+      });
+  }
+  render() {
+    return(
     <div className="App">
     <div/>
     <img src={Logo}/>
@@ -66,7 +96,7 @@ function App() {
       <span style={{paddingLeft: '5px'}}></span>
       </div>
       <img src={Space}/>
-      <div>
+      <div> 
       <div>
       <h1 style={{backgroundColor: "lightblue"}}> 
       <NewComponent name ="DropDown">
@@ -79,16 +109,16 @@ function App() {
       <div>
       <ConButton onClick={clickBudget}>Confirm?</ConButton>
       </div>
-      <div>
+       <div>
       <img src={Space}/>
-      </div>
+      </div> 
       <b>
       <text>Your Budget is $100</text>
       </b>
       <div>
       <img src={Space}/>
       <div/>
-      <img src={Week}/>
+       <img src={Week}/>
       </div>
       <div>
       <b>
@@ -96,7 +126,7 @@ function App() {
       </b>
       </div>
     </div>
-    
-  );
+    )
+    }
 }
 export default App;
