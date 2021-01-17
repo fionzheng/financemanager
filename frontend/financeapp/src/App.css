@@ -1,7 +1,14 @@
 .App {
   text-align: center;
   margin:0;
-  background-color: #494949;
+  background-color: white;
+}
+
+.bgimg {
+  background-image: url('https://buffer.com/resources/content/images/size/w600/wp-content/uploads/2018/03/nafinia-putra-59655-unsplash.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .App {

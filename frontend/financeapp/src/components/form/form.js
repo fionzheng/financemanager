@@ -6,11 +6,13 @@ class Form extends Component {
             <div>
             <form>
                 <div>
-                     <label>Product or Service Obtained: </label>
+                    <b>
+                     <label>Product or Service Obtained:</label>
                      <input type="text" name="product" />
                      <span style={{paddingLeft: '10px'}}></span>
                      <label>Cost of Transaction: </label>
                      <input type="text" name="money" />
+                    </b>
                 </div>
             </form>
             </div>

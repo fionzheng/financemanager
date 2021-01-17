@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css"
-import styled from 'styled-components'
 
 import "./styles.css";
 import { CaButton } from "./components/cashbutton/cashbutton";
@@ -13,6 +12,7 @@ import { ConButton } from "./components/confirm button/confirmbutton";
 import Logo from "./TOP.jpg"
 import Graphic from "./graphic1.jpg"
 import Space from "./spacing.jpg"
+import Week from "./week.jpg"
 
 function clickCash() {
   alert('You selected Cash!');
@@ -32,9 +32,13 @@ function clickBudget() {
 
 function App() {
   return (
+    
     <div className="App">
     <div/>
     <img src={Logo}/>
+    <div>
+    <img src={Space}/>
+    </div>
     <img src={Graphic}/>
       <div>
       <CaButton onClick={clickCash}
@@ -63,8 +67,24 @@ function App() {
       <div>
       <ConButton onClick={clickBudget}>Confirm?</ConButton>
       </div>
+      <div>
+      <img src={Space}/>
+      </div>
+      <b>
       <text>Your Budget is $100</text>
+      </b>
+      <div>
+      <img src={Space}/>
+      <div/>
+      <img src={Week}/>
+      </div>
+      <div>
+      <b>
+      <text>You spent $537 this week! </text>
+      </b>
+      </div>
     </div>
+    
   );
 }
 
